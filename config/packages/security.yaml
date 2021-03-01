@@ -1,0 +1,84 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+        App\Entity\Barman:
+            algorithm: auto
+        App\Entity\Admin:
+            algorithm: auto
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        chain_provider:
+            chain:
+                providers: [app_client_provider, app_barman_provider]
+        app_client_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+        app_super_admin_provider:
+            entity:
+                class: App\Entity\Admin
+                property: email
+
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
+        app_barman_provider:
+            entity:
+                class: App\Entity\Barman   
+                property: email 
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        admin:
+            pattern : ^/dashboard/
+            anonymous: true
+            lazy: true
+            provider: app_super_admin_provider
+            form_login:
+                default_target_path: dashboard
+                login_path: /dashboard/login
+                check_path: /dashboard/login_check
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout -m
+                target: main
+
+ 
+        main:
+            anonymous: true
+            lazy: true
+            provider: chain_provider
+            form_login:
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout -m
+                target: main
+           # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/superadmin/[a-z]+/(add|new|edit|delete), roles: ROLE_SUPERADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/barman, roles: ROLE_BARMAN }
+        - { path: ^/client, roles: ROLE_USER }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+    role_hierarchy:
+        ROLE_SUPERADMIN: ROLE_ADMIN
+        ROLE_ADMIN: ROLE_BARMAN
+        ROLE_BARMAN: ROLE_USER
+        ROLE_CLIENT: ROLE_USER

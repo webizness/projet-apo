@@ -1,0 +1,17 @@
+{% extends 'bar/nav.html.twig' %}
+
+{% block body %}
+<div class="col container1">
+    <div class="card" style="width: 18rem;">
+        <h2 class="titre5">{{ action }} un produit</h2>
+        {#<img class="card-img-top" <img src="{{(cocktail.strDrinkThumb)}}" alt="Card image cap">#}
+
+        {{ form_start(form) }}
+            {{ form_row(form.nom) }}
+            {{ form_errors(form) }}
+            {#<button type="submit" class="btn btn-success">{{ action }}</button>#}
+        {{ form_end(form) }}
+
+    </div>
+</div>
+{% endblock %}

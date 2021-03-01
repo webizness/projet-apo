@@ -1,0 +1,41 @@
+{% extends 'barman/base_barman.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+
+
+<h5 class="titre6">Informations du bar</h5>
+<div class="container1">
+<div class="row my-2">
+  <div class="card mb-3 mx-3" style="width: 16rem;">
+     <img class="card-img-top" src="{{ vich_uploader_asset(barId)}}" {#alt="Card image cap"#}>
+
+    <div class="card-body">
+
+      <h5 class="card-title titre1 container1">Infos du bar</h5>
+      <h5 class="card-title container1">{{barId.nom}}</h5>
+      <h5 class="card-title container1">Notre téléphone
+      <br>
+                            {{barId.telephone}}</h5>
+      
+
+      {% if is_granted('ROLE_ADMIN') %}
+      <a class="btn btn-primary" href="{{ path('bar_bar_edit', {id: barId.id}) }}">Editer<i class="fa fa-edit"></i></a>
+      {% endif %}
+      {#<a href="{{ path('bar_produit', {'id': barId.id})}}" class="btn btn-primary">mes produit</a>#}
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row my-2">
+    <div class="card mb-3 mx-3" style="width: 16rem;">
+      <h5 class="card-title titre1">Ma carte</h5>
+        <a href="{{ path('bar_produit', {'id': barId.id})}}" class="btn btn-primary container1">Mes produits</a>
+      </div>
+    </div>
+    </div>
+  </div>   
+
+{% endblock %}

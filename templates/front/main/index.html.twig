@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block stylesheets %}
+        {{ parent()}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        {{ encore_entry_link_tags('carrousel') }}
+{% endblock %}
+
+{% block body %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+       <p><span class="titre1 mr-2">Bienvenue <b>{{app.user.prenom}} {{app.user.nom}} !</b></span></p>
+                    
+{% if is_granted('ROLE_CLIENT') %}
+{% endif %}
+{% else %}
+<h5 class="titre1">Bienvenue invité !</h5><br>
+<p class="titre1 container1">Nous rappelons que la vente d'alcool est interdite aux mineurs.</p>
+{% endif %}
+{# On affiche les messages flash #}
+{% for typeDeMessageFlash, messages in app.flashes %}
+    {# messages est un tableau avec tous les messages dedans #}
+    {% for message in messages %}
+        <div class="alert alert-{{ typeDeMessageFlash }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+{% include "carousel.html.twig" %}
+
+{% endblock %}
+
+ {% block javascripts %}
+ {{parent()}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+{{ encore_entry_script_tags('carrousel') }}
+
+{% endblock %}

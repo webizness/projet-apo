@@ -1,0 +1,358 @@
+body
+{
+background-image: url("../image/barfond.png");
+background-attachment: fixed;
+
+/*background-repeat: no-repeat;*/
+
+/*background-color: purple;*/
+/*background-color: #1C1C54;*/
+font-family:"Quiksand",sans-sérif;
+
+}
+
+.logo
+{
+    /*@media (max-width: 767px) */
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 1em;
+}
+
+/*----------------------- Menu Navigation -----------------------*/
+.container-nav
+{
+  display: inline-block;
+  text-align: center;
+}
+
+.navbar-nav
+{
+
+/*background-color:#5CE1E6;*/
+background-color: #0DCAF0;
+
+}
+
+.nav-link
+{
+  background-color: #0DCAF0;
+/*background-color:#5CE1E6;*/
+border-radius: 5px 5px 0px 0px;
+margin: 2px;
+}
+
+.navbar-toggler
+{
+background-color:#5CE1E6;
+} 
+
+ul.dropdown-menu.show
+{
+background-color:white;
+}
+
+ul.dropdown-menu.show:hover
+{
+background-color:white;
+}
+
+a.dropdown-item
+{
+/*background-color: red;*/
+color:#1C1C54;
+}
+
+a.dropdown-item:hover
+{
+/*background-color: red;*/
+color:#1C1C54;
+}
+
+h5
+{
+  color:#5CE1E6;
+}
+
+/*------------------- COCKTAILS CARDS BARMAN-------------------------*/
+.card-title
+{
+  color:#1C1C54;
+}
+
+.card-text
+{
+  color:#1C1C54;
+}
+
+/*------------------ Form Inscription*/
+.title
+{
+  color:#5CE1E6; 
+}
+.formulaire
+{
+  text-align: center;
+  color:#5CE1E6;
+}
+
+/*--------------- FOOTER --------------------*/
+.footer
+{
+  color: white;
+  /*background-color:red;*/
+  border-radius : 20px;
+  /*filter: blur(1px);*/
+
+}
+a
+{
+color: white;
+text-decoration: none;
+}
+
+/*---------------FORMULAIRE CONTACT FRONT END  --------------------*/
+
+.form-group
+{
+color:#5CE1E6; 
+}
+
+#button1
+{
+margin:15px;
+background-color: #1C1C54;
+color: #fff;
+}
+
+/*--------------- LOGIN FORM --------------------*/
+
+.login
+{
+color:#5CE1E6;
+}
+
+#button
+{
+margin:15px;
+background-color: transparent;
+color: #fff;
+}
+
+/*-------------Mise en forme des boutons des Api cocktails------------------*/
+.card1
+{
+background-color: transparent;
+}
+
+
+
+.form-group
+{
+  color:#1C1C54;
+  /*color:white;*/
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-primary
+{
+background-color:#1C1C54;
+border-color: transparent;
+}
+
+.btn-secondary
+{
+background-color:#0DCAF0;
+border-color:#0DCAF0;
+/*color:#1C1C54;*/
+color:#fff;
+border-radius: 5px;
+padding: 5px;
+margin:10px ;
+}
+
+.btn-secondary:hover
+{
+background-color:white;
+border-color:white;
+color:#1C1C54;
+}
+
+.container2
+{
+display: inline-block
+}
+
+/*------------- New Nav ----------------------*/
+.navbar-nav
+{
+  background-color: transparent;
+}
+
+.navbar
+{
+  /*background-color: red;*/
+  text-align: center;
+}
+
+.item
+{
+background-color:#5CE1E6;;
+}
+
+.test
+{
+background-color: #5CE1E6;;
+padding: 10px;
+border-radius: 5px 5px 0px 0px;
+}
+
+/*--------------- PAGE MON COMPTE --------------*/
+.mon-style
+{
+  font-family: 'Quicksand';
+  text-align: justify;
+  color:white;
+}
+
+.mon-style-bold
+{
+  
+  font-weight:500;
+  color:white;
+}
+
+/*----------------------*/
+
+.h3
+{
+  color: white;
+}
+
+.p5
+{
+  font-weight: bold;
+  color:#fff;
+}
+
+.p6
+{
+  color:#fff;
+}
+
+.titre /*fonctionne*/
+{
+  color:white;
+}
+
+.titre1
+{
+  color:white;
+  font-weight: 500;
+}
+
+/*--- footer ---*/
+.pr-1 /*fonctionne*/
+{
+  color:white;
+}
+
+.text-3 /*fonctionne*/
+{
+  color:white;
+}
+
+.footer-description
+{
+  color:white;
+}
+
+.container1
+{
+  display: flex;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.form-control
+{
+  max-width: 250px;
+  /*display: flex;*/
+  align-items: center;
+}
+
+a
+{
+color: white;
+text-decoration: none;
+
+}
+
+label.required
+{
+  color:#1C1C54;
+  text-align:center;
+}
+legend.col-form-label.required
+{
+  /*color:#1C1C54;*/
+  color: white;
+}
+button.btn.btn-info
+{
+  margin: 10px;
+}
+
+div.form-group
+{
+  text-align:center;
+}
+form
+{
+  text-align: center;
+}
+
+.card-marge
+{
+margin: 15px;
+}
+.card-5
+{
+  background-color: #0DCAF0;
+  border-radius: 5px;
+}
+.p32
+{
+color: white;
+}
+.titre5
+{
+color:#1C1C54; 
+text-align: center;
+}
+.titre6
+{
+color:white; 
+text-align: center;
+
+}
+
+.card-6
+{
+  background-color: white;
+  width: 300px;
+  color: #1C1C54;
+}
+
+h1.titre8
+{
+  color: #1C1C54;
+
+}
+
+button.titre8.btn
+{
+  background-color: #0DCAF0;
+}
+

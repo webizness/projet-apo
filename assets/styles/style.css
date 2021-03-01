@@ -1,0 +1,360 @@
+body
+{
+/*background-image: url("../image/barfond.png");/*
+/*background-color: purple;*/
+}
+
+.logo
+{
+    /*@media (max-width: 767px) */
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 1em;
+}
+
+/*----------------------- Menu Navigation -----------------------*/
+#menu, #menu ul{
+  padding:0;
+  margin:20px;
+  list-style:none;
+  text-align:center;
+  /*background-color: purple;*//*couleur de fond global de la barre de nav*/
+  }
+
+  #menu li{
+  display:inline-block;
+  position:relative;
+  border-radius:8px 8px 0 0;
+  }
+
+  #menu ul li{
+  display:inherit;
+  border-radius:0;
+  }
+
+  #menu ul li:hover{
+  border-radius:0;
+  }
+
+  #menu ul li:last-child{
+  border-radius:0 0 8px 8px;
+  }
+
+  #menu ul{
+  position:absolute;
+  z-index: 1000;
+  max-height:0;
+  left: 0;
+  right: 0;
+  overflow:hidden;
+  -moz-transition: .8s all .3s;
+  -webkit-transition: .8s all .3s;
+  transition: .8s all .3s;
+  }
+
+  #menu li:hover ul{
+  max-height:15em;
+  }
+
+  /* background des liens menus */
+  #menu li:first-child{
+  background-color: #5CE1E6;
+  background-image:-webkit-linear-gradient(top,#5CE1E6 0%, #5CE1E6  100%);
+  background-image:linear-gradient(to bottom, #5CE1E6 0%,  #5CE1E6 100%);
+  }
+
+  #menu li:nth-child(2){
+  background-color: #5CE1E6;
+  background-image:-webkit-linear-gradient(top,#5CE1E6 0%, #5CE1E6  100%);
+  background-image:linear-gradient(to bottom, #5CE1E6 0%,  #5CE1E6 100%);
+  }
+
+  #menu li:nth-child(3){
+  background-color: #5CE1E6;
+  background-image:-webkit-linear-gradient(top,#5CE1E6 0%, #5CE1E6  100%);
+  background-image:linear-gradient(to bottom, #5CE1E6 0%,  #5CE1E6 100%);
+  }
+
+  #menu li:nth-child(4){
+  background-color: #5CE1E6;
+  background-image:-webkit-linear-gradient(top,#5CE1E6 0%, #5CE1E6  100%);
+  background-image:linear-gradient(to bottom, #5CE1E6 0%,  #5CE1E6 100%);
+  }
+
+  #menu li:last-child{
+  background-color: #5CE1E6;
+  background-image:-webkit-linear-gradient(top,#5CE1E6 0%, #5CE1E6  100%);
+  background-image:linear-gradient(to bottom, #5CE1E6 0%,  #5CE1E6 100%);
+  }
+
+  /* background des liens sous menus */
+  #menu li:first-child li{
+  background:#EEA1FF;
+  }
+
+  #menu li:nth-child(2) li{
+  background:#EEA1FF;
+  }
+
+  #menu li:nth-child(3) li{
+  background:#EEA1FF;
+  }
+
+  #menu li:nth-child(4) li{
+    background:#EEA1FF;
+  }
+
+  #menu li:last-child li{
+  background:#EEA1FF;
+  }
+
+  /* background des liens menus et sous menus au survol */
+  #menu li:first-child:hover, #menu li:first-child li:hover{
+  background:#5CE1E6;
+  }
+
+  #menu li:nth-child(2):hover, #menu li:nth-child(2) li:hover{
+  background:#5CE1E6;
+  }
+
+  #menu li:nth-child(3):hover, #menu li:nth-child(3) li:hover{
+  background:#5CE1E6;
+  }
+
+  #menu li:nth-child(4):hover, #menu li:nth-child(3) li:hover{
+  background:#5CE1E6;
+  }
+
+  #menu li:last-child:hover, #menu li:last-child li:hover{
+  background:#5CE1E6;
+  }
+
+  /* les a href */
+  #menu a{
+  text-decoration:none;
+  display:block;
+  padding:8px 32px;
+  color:#1C1C54;
+  font-family:arial;
+  }
+
+  #menu ul a{
+  padding:8px 0;
+  }
+
+  #menu li:hover li a{
+  color:#1C1C54;
+  text-transform:inherit;
+  }
+
+  #menu li:hover a, #menu li li:hover a{
+  color:#000;
+  }
+
+/*h5{
+  color:#5CE1E6;
+}*/
+
+.bis
+{
+  color:#EEA1FF; 
+}
+
+p
+{
+  color:#5CE1E6;
+}
+
+a
+{
+  color:#ff66c4;
+}
+
+/*.footer-title-horaires
+{
+  color:#5CE1E6;
+}*/
+
+.btn1
+{
+  background-color:#ff66c4;
+}
+
+/*------------------- COCKTAILS CARDS BARMAN-------------------------*/
+.card-title
+{
+  color:#1C1C54;
+}
+
+.card-text
+{
+  color:#1C1C54;
+}
+
+/*------------------ Form Inscription -------------------*/
+.title
+{
+  color:#5CE1E6; 
+}
+
+.formulaire
+{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color:#5CE1E6;
+}
+
+/*-------------------- FOOTER --------------------*/
+.footer
+{
+  /*background-color:red;*/
+  border-radius : 20px;
+  /*filter: blur(1px);*/
+  opacity: 10;
+  color:#ff66c4;
+}
+
+/*---------------------- FORMULAIRE CONTACT FRONT END --------------------*/
+.form-group
+{
+color:#ff66c4; 
+}
+
+#button1
+{
+margin:15px;
+background-color: #1C1C54;
+color: #fff;
+}
+
+/*--------------- LOGIN FORM --------------------*/
+.login
+{
+color:#ff66c4;
+}
+
+#button
+{
+margin:15px;
+background-color: #5CE1E6;
+color: #fff;
+}
+
+/*------------- Mise en forme des boutons des Api cocktails ------------------*/
+.card1
+{
+background-color: transparent;
+}
+
+.form-group
+{
+  color:/*#1C1C54;*/#ff66c4;
+  text-align: center;
+}
+
+.btn-primary
+{
+background-color:#1C1C54;
+border-color:#1C1C54;
+}
+
+.btn-secondary
+{
+background-color:#ff66c4;
+border-color:#ff66C4;
+/*color:#1C1C54;*/
+color:fff;
+border-radius: 5px;
+padding: 5px;
+}
+
+.btn-secondary:hover
+{
+background-color:#5CE1E6;
+border-color:#5CE1E6;
+color:#1C1C54;
+}
+
+.container2
+{
+display: inline-block
+}
+
+/*--------------- PAGE MON COMPTE --------------*/
+.mon-style
+{
+  text-align: justify;
+  color:#ff66c4;
+}
+
+.mon-style-bold
+{
+  font-weight: bold;
+  color:#ff66c4;
+}
+
+
+/*----------------------*/
+
+.h3
+{
+  color: #ff66c4;
+}
+
+.p5
+{
+  font-weight: bold;
+  color:#fff;
+}
+
+.p6
+{
+  color:#fff;
+}
+
+.titre /*fonctionne*/
+{
+  color:#ff66c4;
+}
+
+.titre1
+{
+  color:#ff66c4;
+  font-weight: bold;
+}
+
+/*--- footer ---*/
+.pr-1 /*fonctionne*/
+{
+  color:#ff66c4;
+}
+
+.text-3 /*fonctionne*/
+{
+  color:#ff66c4;
+}
+
+.footer-description
+{
+  color:#ff66c4;
+}
+
+.container1
+{
+  display: flex;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.form-control
+{
+  max-width: 250px;
+  /*display: flex;*/
+  align-items: center;
+}
+
+.container2
+{
+display: inline-block
+}

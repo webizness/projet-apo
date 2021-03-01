@@ -1,0 +1,60 @@
+{% extends 'base_barman.html.twig' %}
+
+{% block title %}Votre commande{% endblock %}
+
+{% block body %}
+
+{# Affiche une seule commande #}
+<h2 class="titre1">Votre commande</h2>
+  {# On affiche les messages flash #}
+    {% for typeDeMessageFlash, messages in app.flashes %}
+        {# messages est un tableau avec tous les messages dedans #}
+        {% for message in messages %}
+            <div class="alert alert-{{ typeDeMessageFlash }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message }}
+          </div>
+        {% endfor %}
+    {% endfor %}
+        <span>
+    {% if commande.status == 'done' %}
+        <!-- commande ok -->
+        <a href="{{ path('commande_set_status', { 'id' : key, 'status' : 'undone' })}}">
+            <span class="glyphicon glyphicon-check"></span>
+        </a>
+        <form action="{{ path('commande_set_status', { 'id' : key, 'status' : 'undone' })}}" method="post" class="status">
+            <button class="btn btn-xs btn-link" type="submit">
+                <span class="glyphicon glyphicon-check"></span>
+            </button>
+        </form>
+    {% else %}
+    <!-- commande pas ok -->
+        <a href="{{ path('commande_set_status', { 'id' : key, 'status' : 'done' })}}">
+            <span class="glyphicon glyphicon-unchecked"></span>
+        </a>
+        <form action="{{ path('commande_set_status', { 'id' : key, 'status' : 'done' })}}" method="post" class="status">
+            <button class="btn btn-xs btn-link" type="submit">
+                <span class="glyphicon glyphicon-unchecked"></span>
+            </button>
+        </form>
+    {% endif %}
+
+    <!-- lien vers une commande -->
+        <a href="{{ path('commande_show', { 'id' : key })}}">
+            {% if command_set_status == 'done' %}
+            
+            <!-- commande ok -->
+            <s>{{ command.task }}</s>
+            
+            {% else %}
+            
+            <!-- commande pas ok -->
+                {{ command.task }}
+            {% endif %}
+        </a>
+    </span>
+{% endblock %}
+
+{% endblock %}

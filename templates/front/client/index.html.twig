@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue {{app.user.nom}} {{app.user.prenom}} !{% endblock %}
+
+{% block body %}
+<div class="container1">
+
+  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+  <h5 class="titre1">Vous êtes identifié(e) en tant que {{app.user.prenom}} {{app.user.nom}}</h5>
+
+  {% endif %}
+</div>
+
+  <h5 class="titre1">Mon compte</h5>
+  <div>
+      <div class="container2">
+        <div class="row my-2 ">
+          <div class="card mb-3 mx-3" style="width: 16rem;">
+            <div class="card-body">
+              <h5 class="card-title">Mes informations</h5>
+              <p class="card-text">{{app.user.nom}} {{app.user.prenom}}</p>
+              <p class="card-text">{{app.user.email}} </p>
+              <p class="card-text">{{app.user.adresse}} {{app.user.codePostal}} {{app.user.ville}} </p>
+              <a class="btn btn-primary" href="{{ path('client_information_edit', {id: app.user.id}) }}">Editer<i
+                  class="fa fa-edit"></i></a>
+
+            </div>
+          </div>
+          <div class="card mb-3 mx-3" style="width: 16rem;">
+            <div class="card-body">
+
+              <h5 class="card-title">Mes Commandes</h5>
+              <a class="btn btn-primary" href="{{ path('commandes_client') }}">voir mes commande</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+  {% endblock %}

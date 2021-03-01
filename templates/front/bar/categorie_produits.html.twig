@@ -1,0 +1,39 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+<h5 class="titre1">Carte du bar</h5>
+<div class="card-marge">
+  {% for categorie in categories %}
+
+
+  <a href="{{ path('details_categorie',{'id': bar.id, 'categorieId': categorie.id})}}" type="button"
+    class="btn btn-info">{{categorie.nom}}</a>
+
+  {% endfor %}
+</div>
+{% if produit %}
+
+{% for produits in produit %}
+{#{{dump (produits)}}#}
+<div class="container2">
+  <div class="row mx-2">
+    <div class="card mb-3" style="width: 12rem;">
+      <img class="card-img-top" src="{{produits.image}}" {#alt="Card image cap"#}/>
+      <img class="card-img-top" src="{{ vich_uploader_asset(produits)}}" {#alt="Card image cap"#}/>
+      <div class="card-body">
+        <h5 class="card-title">{{produits.nom}}</h5>
+        <p class="card-text">{{produits.prix}} € </p>
+        <a href="{{ path('panier_add', {'id': produits.id})}}" class="btn btn-primary">Ajouter au panier</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+{% else %}
+<p class="p32">PAS DE PRODUIT !!</p>
+{% endif %}
+{% endblock %}

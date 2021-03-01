@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+    {% for index, bars in bar %}
+    {{dump (bars)}}
+<div class="container2">
+  <div class="row mx-2">
+    <div class="card mb-3" style="width: 18rem;">
+    <img class="card-img-top" src="{{bar.image}}"{#alt="Card image cap"#}>
+      <img class="card-img-top" src="{{ vich_uploader_asset(bar, 'image/bar') }}">
+      <div class="card-body">
+        <h5 class="card-title">{#{{bars.nom}}#}</h5>
+        {#<p class="card-text"> {{produit.bar.ville}}</p>#}
+        <p class="card-text"> {{bars.ville}}</p>
+      
+        <a href="{{ path('details', {'id': bars.id})}}"class="btn btn-primary">Entrer dans ce bar</a>
+        <img src="{{ vich_uploader_asset(bar, 'image') }}" alt="{{ bar.name }}" />
+      </div>
+    </div>
+  </div>
+</div>
+
+    {% endfor %}
+
+{% endblock %}
+

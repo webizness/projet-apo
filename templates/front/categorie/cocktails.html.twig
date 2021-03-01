@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cocktails{% endblock %}
+
+{% block body %}
+<h5 class="titre1">Liste des cocktails</h5>
+{% for  produits in produit %}
+ {#{{dump (produits)}}#}
+ <h5 class="bis">{{produits.nom}} | {{produits.categories.nom}} | {{produits.categories.id}}</h5>
+ {#{{dump (produits.categories.id)}}#}
+ {#<h5>{{produits.bars.owner.nom}}</h5>#}
+ {{dump (produits)}}
+ {#{{dump (produits.categories.{:id})}}#}
+ {#{{dump (produits.{id: categorie.id})}}#}
+    
+{% endfor %}
+
+{% endblock %}

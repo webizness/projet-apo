@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="col">
+    <div class="card" style="width: 18rem;">
+    <h2 class="titre1 ">{{ action }} mes adresses de livraison</h2>
+   
+    {{ form_start(form) }}
+        
+        {{form (form.adresse)}}
+        {{form (form.ville)}}
+        {{form (form.codePostal)}}
+        {{ form_errors(form) }}
+
+    {{ form_end(form) }}
+
+        <button type="submit" class="btn btn-success">{{ action }}</button>
+
+    </div>
+</div>
+{% endblock %}

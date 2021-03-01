@@ -1,0 +1,26 @@
+  
+{% extends 'barman/base_barman.html.twig' %}
+{% block body %}
+
+<div class="container">
+  <div class="row -mx-5">
+    <div class="col-6">
+      <div class="card1" style="width: 18rem;">
+        <form class="form"method="GET">
+            <input name="nom"></input>
+          <button  class="btn-secondary" type="submit">Chercher mon cocktail</button>
+        </form>
+        </div>
+    </div>
+  {% if cocktail %}
+    <div class="col container1">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" <img src="{{(cocktail.strDrinkThumb)}}" alt="Card image cap">
+        {{ form_start(form) }}
+          {{ form_row(form.nom) }}
+        {{ form_end(form) }}
+      </div>
+    </div> 
+
+  {% endif %}
+{% endblock %}

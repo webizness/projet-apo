@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail de mon compte{% endblock %}
+
+{% block body %}
+<h5 class="titre1">Mes informations</h5>
+
+  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+  <h5 class="titre1">Bienvenue {{app.user.prenom}} !</h5>                   
+  {% if is_granted('ROLE_CLIENT') %}
+  {% endif %}
+  {% else %}
+
+  {# <h5>Bienvenue invité merci de vous connecter</h5> #}
+  {% endif %}
+ 
+<h5>{{app.user.nom}}</h5>
+<h5>{{app.user.prenom}}</h5>
+<h5>{{app.user.adresse}}</h5>
+<h5>{{app.user.ville}}</h5>
+<h5>{{app.user.code_postal}}</h5>
+
+{#{{dump (app.user)}}#}
+{% endblock %}

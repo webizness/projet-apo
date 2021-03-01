@@ -1,0 +1,13 @@
+{% extends "barman/base_barman.html.twig" %}
+
+{% block body %}
+
+<div class="container1">
+<div class="card">
+  {{form_start(form)}}
+  {{form_rest(form)}}
+     <input type="submit" class="btn btn-info" value="Valider" />
+  {{form_end(form)}}
+</div>
+</div>
+{% endblock %}

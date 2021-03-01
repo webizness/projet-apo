@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+<h5 class="titre1">Carte du bar</h5>
+<div>
+
+  {% for categorie in categories %}
+
+  <a href="{{ path('details_categorie',{'id': bar.id, 'categorieId': categorie.id})}}" type="button"
+    class="btn btn-info">{{categorie.nom}}</a>
+
+  {% endfor %}
+</div>
+
+{% endblock %}
+

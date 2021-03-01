@@ -1,0 +1,32 @@
+{% extends 'bar/nav.html.twig' %}
+
+{% block title %}Detail Barman{% endblock %}
+
+{% block body %}
+
+<h5 class="titre1">Vos barman(s)</h5>
+{% for barman in bar.barmans %}
+{#{{dump (produit)}}#}
+
+<div class="container2">
+
+<div class="row mx-2">
+
+<div class="card mb-3" style="width: 16rem;">
+  <img class="card-img-top" src="{{ vich_uploader_asset(barman) }}" {#alt="Card image cap"#}>
+  <div class="card-body">
+    <h5 class="card-title">{{barman.nom}}</h5>
+    <p class="card-text">{{barman.prenom}}  </p>
+    <a class="btn btn-primary" href="{{ path('bar_barman_edit', {id: barman.id}) }}">Editer<i class="fa fa-edit"></i></a>
+    <form action="{{ path('bar_barman_delete', {id: barman.id}) }}" method="post" class="d-inline">
+      <button class="btn btn-danger">Supprimer<i class="fa fa-trash"></i></button>
+      <input type="hidden" name="_method" value="DELETE">
+    </form>
+
+  </div>
+
+</div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

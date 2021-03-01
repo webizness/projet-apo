@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Récapitulatif des commandes{% endblock %}
+
+{% block body %}
+
+<h5>Liste de vos commandes</h5>
+
+{# On affiche les messages flash #}
+{% for typeDeMessageFlash, messages in app.flashes %}
+    {# messages est un tableau avec tous les messages dedans #}
+    {% for message in messages %}
+        <div class="alert alert-{{ typeDeMessageFlash }} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+   
+       
+
+        <div class="container2">
+        <h5 class="card-title"></h5>
+  <div class="row my-2 ">
+    <div class="card mb-3 mx-3"  style="width: 16rem;">
+      <div class="card-body">
+       
+        {# <pre>
+          {{ dump(ligneDeCommandes) }}
+          <p class="card-text">{{commande.produits.bar.nom}} </p>
+        </pre> #}
+        
+           
+          {% if ligneDeCommandes %} 
+       
+            {% for ligne in ligneDeCommandes %}
+
+              <p class="card-text"> Nom du bar : {{ligne.produits.bar.nom}} </p>
+
+              <p class="card-text">Produit(s) commandé(s) : {{ligne.produits.nom}} </p>
+              <p class="card-text">Prix de la commande : {{ligne.commandes.prix}} € </p>
+            
+            {% endfor %}
+          {% else %}
+          <p> Pas de commande</p>
+
+        {% endif %}
+            
+       
+       
+        {# {% for commande in app.user.commandes %}
+          <p class="card-text">Adresse de la commande : {{commande.adresseDeLivraison}}</p>
+          {% for ligne in commande.ligneDeCommandes %}
+            <p class="card-text">Quantité : {{ligne.quantite}}</p>
+            <p class="card-text">Nom du produit : {{ligne.produits.nom}}</p>
+          {% endfor %}
+        {% endfor %} #}
+        
+       
+      </div>
+
+    </div>
+</div>
+
+   
+</div>
+
+   
+
+{% endblock %}
+

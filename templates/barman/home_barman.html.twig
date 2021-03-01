@@ -1,0 +1,35 @@
+{% extends 'barman/base_barman.html.twig' %}
+   
+   {% block title %}Page Barman{% endblock %}
+
+{% block body %}
+
+
+  <h2 class="titre1 container1">BIENVENUE SUR VOTRE INTERFACE</h2>
+  <p class="titre1 container1"> Il suffira de naviguer sur les onglets pour ajouter des propositions sur le site</p>
+
+  <h5 class="titre1 container1">Mon compte</h5>
+  <div class="container1">
+    <div class="row my-2 ">
+      <div class="card mb-3 mx-3" style="width: 16rem;">
+        <div class="card-body">
+          <h5 class="card-title container1">Mes informations</h5>
+          <p class="card-text container1">{{barman.nom}} {{barman.prenom}}</p>
+          <p class="card-text container1">{{barman.email}} </p>
+
+          <a class="btn btn-primary container1" href="{{ path('barman_home_barman_edit', {id: barman.id}) }}">Editer<i
+              class="fa fa-edit"></i></a>
+
+
+        </div>
+      </div>
+      <div class="card mb-3 mx-3 container1" style="width: 16rem;">
+        <div class="card-body">
+          <h5 class="card-title container1">Mes commandes</h5>
+          <a class="btn btn-primary container1" href="{{ path('commands_list') }}">Voir mes commandes</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

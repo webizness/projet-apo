@@ -1,0 +1,30 @@
+{% extends 'bar/nav.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+<h5 class="titre1">Produit(s) du bar</h5>
+
+{% for produit in bar.produits %}
+{#{dump (produit)#}}
+
+<div class="container2">
+  <div class="row mx-2">
+    <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="{{produit.image}}"{#alt="Card image cap"#}>
+      <img class="card-img-top" src="{{ vich_uploader_asset(produit)}}" {#alt="Card image cap"#}/>
+
+      <div class="card-body">
+        <h5 class="card-title">{{produit.nom}}</h5>
+        <p class="card-text">{{produit.prix}} € </p>
+          <a class="btn btn-primary" href="{{ path('bar_produit_edit', {id: produit.id}) }}">Editer<i class="fa fa-edit"></i></a>
+          <form action="{{ path('bar_produit_delete', {id: produit.id}) }}" method="post" class="d-inline">
+            <button class="btn btn-danger">Supprimer<i class="fa fa-trash"></i></button>
+            <input type="hidden" name="_method" value="DELETE">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

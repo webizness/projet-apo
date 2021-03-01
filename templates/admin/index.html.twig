@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Bienvenue !{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        {% endblock %}
+    </head>
+    <body>
+    <div class="container">
+    <div class="text-center">
+        <img src= "{{ '../image/logo-ton-apero.png'}}" class="rounded" alt="Logo">
+    </div>
+ 
+    <div class="navigation">  
+        <ul id="menu">
+	        <li><a href="/products">Déconnexion</a></li>
+
+    <div class="p5"=font:fff>Description du bar partenaire</div>
+    <img src= "{{ '../image/logo-ton-apero.png ' }}" class="rounded" alt="Logo">
+
+    <div class="p6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam laboriosam placeat dicta porro, similique dolore praesentium repellat veniam sint neque harum vitae commodi iure, ex maiores. Nisi, repudiandae delenitp oiuhdki.</div>
+
+    <button type="button-1" class="btn btn-primary">Modifier</button>
+    <button type="button-1" class="btn btn-primary">Supprimer</button>
+
+    <div class="p6">Ajouter un bar partenaire</div><button type="button-1" class="btn btn-primary">Ajouter</button>
+    <div class="p6">Modifier un bar partenaire</div><button type="button-1" class="btn btn-primary">Modifier</button>
+    <div class="p6">Supprimer un bar partenaire</div><button type="button-1" class="btn btn-primary">Supprimer</button>
+
+<!---============================================== footer =========================================-->
+    <div class="title footer">
+    <footer id="footer">
+        <div class="container">
+            <div class="row py-5 my-4">
+                <div class="col">
+                    <h5 class="titre1 text-3 mb-3">Pour la petite histoire</h5>
+                    <p class="titre1 pr-1">Ton Apéro est un concept qui s'est pensé à plusieurs:
+                        Daniel, Thibault, Mickaël et Ophélie en avaient marre de siroter leurs rhums et leurs vins durant
+                        le confinement et avaient envie de leurs cocktails hebdomadaires.
+                        Seulement les propositions de livraisons étaient minces.
+                        Ils ont donc eu l'idée de monter un site pour mettre en relation
+                        les bars et les envies de dernière minute.</p>
+                </div>
+                <div class="col">
+                    <div class="footer-contact">
+                        <a href="contact.php">
+                            <h5 class="text-3 mb-3">Contactez-nous</h5>
+                        </a>
+                        <p class="pr-1">
+                            La team Apéro<br>
+                            2 rue de la gueule de bois<br>
+                            69560 Zailandbar<br>
+                            tel: 07.89.89.98.09<br>
+                            lateamtonapero@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col ">
+                    <ul class="footer-description">
+                        <div class="titre1"><a href="connexionusers.php">Mon compte</a></div>
+                        <div class="titre1"><a href="conditionsgénérales.php">Conditions générales de Ventes</a>
+                        </div>
+                        <div class="footer-title-horaires">Horaires d'ouvertures</div>
+                        <p class="titre1">  Ouvert en continu<br>
+                                            Du mardi au samedi de 9H30 à 16H00
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container py-2">
+                <div class="row py-4">
+                    <div
+                        class="col align-items-center">
+                        <p class="titre1">© 2020 Ton Apero All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>   
+        {% endblock %}
+    </body>
+</html>

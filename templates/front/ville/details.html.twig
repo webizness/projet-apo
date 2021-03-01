@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+<h5 class="titre1">Carte du bar</h5>
+{% set bars = bar %}
+<h5 class="titre1">{{bars.nom}}</h5>
+{% for produit in bar.produits %}
+{#{{dump (produit)}}#}
+<div class="container2">
+<div class="row mx-2">
+<div class="card mb-3" style="width: 12rem;">
+  <img class="card-img-top" src="{{produit.image}}">{#alt="Card image cap"#}
+  <img class="card-img-top" src="{{ vich_uploader_asset(produit,'imageFile') }}" {#alt="Card image cap"#}>
+  <div class="card-body">
+    <h5 class="card-title">{{produit.nom}}</h5>
+    <p class="card-text">{{produit.prix}} € </p>
+    
+    <a href="{{ path('panier_add', {'id': produit.id})}}" class="btn btn-primary">Ajouter au panier</a>
+  </div>
+</div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

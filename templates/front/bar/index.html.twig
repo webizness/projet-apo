@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bar{% endblock %}
+
+{% block body %}
+    {% for index, bars in bar %}
+<div class="container2">
+  <div class="row mx-2">
+    <div class="card mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{bars.nom}}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="{{ path('details', {'id': bars.id})}}" class="btn btn-primary">Entrer dans ce bar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  {% endfor %}
+
+{% endblock %}
+
